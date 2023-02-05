@@ -1,0 +1,59 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="30%">
+    <mat-card class="card">
+      <div class="header-image" fxLayoutAlign="center center">
+        <img src="../../assets/images/tristate.png" alt="" />
+      </div>
+      <mat-card-content>
+        <div fxLayout="column">
+          <div fxLayoutAlign="center center">
+            <div class="avtar"></div>
+          </div>
+          <div fxLayoutAlign="center center">
+            <h2 class="title">Sign In</h2>
+          </div>
+          <form autocomplete="off" [formGroup]="signinForm">
+            <mat-form-field appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input
+                matInput
+                placeholder="User Name"
+                formControlName="username"
+              />
+              <mat-error
+                *ngIf="userName?.invalid && userName?.errors?.['required']"
+              >
+                Please enter user name
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+              <mat-error
+                *ngIf="password?.invalid && password?.errors?.['required']"
+              >
+                Please enter password
+              </mat-error>
+            </mat-form-field>
+            <div class="mt-10">
+              <mat-checkbox>Remember me</mat-checkbox>
+            </div>
+          </form>
+          <button mat-raised-button color="primary" (click)="login()">
+            Sign in
+          </button>
+          <a>Need help signing in?</a>
+          <hr />
+          <div routerLink="sign-up" class="p-50">
+            Don't have an account? <a>Sign up</a>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

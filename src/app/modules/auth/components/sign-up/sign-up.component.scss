@@ -1,0 +1,30 @@
+.card {
+  width: 100%;
+
+  .header-image {
+    padding: 20px 90px;
+    border-bottom: 1px solid #ddd;
+    img {
+      width: 64px;
+      height: 40px;
+    }
+  }
+  
+  .title {
+    color: #5e5e5e;
+    margin-top: 10px;
+  }
+
+  mat-form-field  {
+    width: 100%;
+  }
+  
+  a {
+    margin-top: 10px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

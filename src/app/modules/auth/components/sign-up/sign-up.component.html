@@ -1,0 +1,91 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="30%">
+    <mat-card class="card">
+      <div class="header-image" fxLayoutAlign="center center">
+        <img src="../../assets/images/tristate.png" alt="" />
+      </div>
+      <mat-card-content>
+        <div fxLayout="column">
+          <div fxLayoutAlign="center center">
+            <h2 class="title">Create Account</h2>
+          </div>
+          <form autocomplete="off" [formGroup]="signupForm">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" formControlName="email" />
+              <mat-error *ngIf="email?.invalid && email?.errors?.['required']">
+                Please enter email
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+              <mat-error
+                *ngIf="password?.invalid && password?.errors?.['required']"
+              >
+                Please enter password
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>First name</mat-label>
+              <input
+                matInput
+                placeholder="First name"
+                formControlName="firstname"
+              />
+              <mat-error
+                *ngIf="firstName?.invalid && firstName?.errors?.['required']"
+              >
+                Please enter firstName
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Middle name</mat-label>
+              <input
+                matInput
+                placeholder="Middle name"
+                formControlName="middlename"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Last name</mat-label>
+              <input
+                matInput
+                placeholder="Last name"
+                formControlName="lastname"
+              />
+              <mat-error
+                *ngIf="lastName?.invalid && lastName?.errors?.['required']"
+              >
+                Please enter lastName
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Mobile phone</mat-label>
+              <input
+                matInput
+                placeholder="Mobile phone"
+                formControlName="phoneNumber"
+              />
+              <mat-error
+                *ngIf="phoneNumber?.invalid && phoneNumber?.errors?.['required']"
+              >
+                Please enter phoneNumber
+              </mat-error>
+            </mat-form-field>
+          </form>
+          <p>* indicates required field</p>
+          <button mat-raised-button color="primary" (click)="signup()">
+            Register
+          </button>
+          <a routerLink="/login">Back to sign in</a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
